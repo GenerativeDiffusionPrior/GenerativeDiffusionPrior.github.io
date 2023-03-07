@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>CityNeRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <link rel="icon" type="image/png" href="../img/newyork.ico">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link href="css/twentytwenty.css" rel="stylesheet">
+    <link href="css/foundation.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <!-- CityNeRF: Building NeRF at City Scale -->
+                Generative Diffusion Prior for <br> Unified Image Restoration and Enhancement
+                <!-- <small>CVPR 2023</small> -->
+            </h1>
+            <h4 style="text-align:center">CVPR 2023</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div style="margin-bottom: 0.7em; margin-top:0.2em" class="authors">
+                    <a style="color:#000000;" href="https://kam1107.github.io/">Ben Fei<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://eveneveno.github.io/lnxu/">Zhaoyang Lv<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://xingangpan.github.io/">Liang Pan<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="http://nxzhao.com/">Junzhe Zhang<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://anyirao.com/">Weidong Yang<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://people.mpi-inf.mpg.de/~theobalt/">Tianyue Luo<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="http://daibo.info/">Bo Zhang<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="http://daibo.info/">Bo Dai<sup>2</sup></a>
+                </div>
+
+                <div style="margin-bottom: 0.5em;" class="affiliations">
+                    <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.mpi-inf.mpg.de/">Max Planck Institute for Informatics<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                    </br>
+                    <a href="https://www.bath.ac.uk/">University of Bath<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>4</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                </div>
+
+                <div style="margin-bottom: 0.7em;" class="col-md-12 text-center">
+                    *denotes equal contribution
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-bottom: 0.7em;" class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2112.05504">
+                            <image src="./img/paper.png" height="50px"><br>
+                                <h5><strong>arxiv</strong></h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./img/1947.pdf">
+                            <image src="./img/paper.png" height="50px"><br>
+                                <h5><strong>ECCV2022</strong></h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/city-super/BungeeNeRF">
+                            <image src="./img/github_pad.png" height="50px"><br>
+                                <h5><strong>Code</strong></h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./img/supp.pdf">
+                            <image src="./img/paperclip.png" height="50px"><br>
+                                <h5><strong>Supplement</strong></h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+                    Neural Radiance Field (NeRF) has achieved outstanding performance in modeling 3D objects and controlled scenes, usually under a single scale. In this work, we make the first attempt to bring NeRF to city-scale, with views ranging from satellite-level that captures the overview of a city, to ground-level imagery showing complex details of an architecture. The wide span of camera distance to the scene yields multi-scale data with different levels of detail and spatial coverage, which casts great challenges to vanilla NeRF and biases it towards compromised results. To address these issues, we introduce CityNeRF, a progressive learning paradigm that grows the NeRF model and training set synchronously. Starting from fitting distant views with a shallow base block, as training progresses, new blocks are appended to accommodate the emerging details in the increasingly closer views. The strategy effectively activates high-frequency channels in the positional encoding and unfolds more complex details as the training proceeds. We demonstrate the superiority of CityNeRF in modeling diverse city-scale scenes with drastically varying views, and its support for rendering views in different levels of detail.                
+                </p>
+            </div>
+        </div>
+
+        <div class="row">                              
+            <div class="col-md-6 col-md-offset-3">
+                <h3>
+                    Low-light Enhancement
+                </h3>
+                <div class="twentytwenty-container" id="images">
+                    <img src="./img/low_light01.jpg" />
+                    <img src="./img/high_light02.png" />
+                </div>
+            </div>                                                     
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Framework
+                </h3>
+                <image src="img/training_mechanism_residual_v9.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+                    <strong> Overview of CityNeRF.</strong> (a) An illustration of the multi-scale data in city-scale scenes, where we use L ∈ { 1 , 2 , 3 , . . . , } to
+                        denote each scale. At each stage, our model grows in synchronization with the training set. (b) New residual blocks are appended to the
+                        network as the training proceeds, supervised by the union of samples from the most remote scale up to the current scale. The structure of a
+                        residual block is shown in the dashed box. (c) Level-of-detail rendering results obtained at different residual blocks. From shallow to deep,
+                        details are added bit by bit. (
+                        <a style="color:#000000;" href="https://www.google.com/help/terms_maps/">
+                        ©2021 Google
+                        </a>
+                        )
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="row no-gutters justify-content-between">
+                    <div class="col-lg-5">
+                        <h3 class="my-0 fs-1 fw-medium text-primary text-uppercase text-center text-lg-left">Paper</h3>
+                        <h2 class="mb-5 fw-medium text-secondary text-uppercase text-center text-lg-left">Abstract</h2>
+                        <p class="text-justify">
+                            We show that pre-trained Generative Adversarial Networks (GANs), e.g., StyleGAN, can be used as a latent bank to improve the restoration quality of large-factor image super-resolution (SR). While most existing SR approaches attempt to generate realistic textures through learning with adversarial loss, our method, Generative LatEnt bANk (GLEAN), goes beyond existing practices by directly leveraging rich and diverse priors encapsulated in a pre-trained GAN. But unlike prevalent GAN inversion methods that require expensive image-specific optimization at runtime, our approach only needs a single forward pass to generate the upscaled image. GLEAN can be easily incorporated in a simple encoder-bank-decoder architecture with multi-resolution skip connections. Switching the bank allows the method to deal with images from diverse categories, e.g., cat, building, human face, and car. Images upscaled by GLEAN show clear improvements in terms of fidelity and texture faithfulness in comparison to existing methods. 
+                        </p>
+                    </div>                        
+                    <div class="col-lg-6">
+                        <div class="row">                                
+                            <div class="small-12 columns">
+                                <div class="twentytwenty-container" id="images">
+                                    <img src="./img/teaser.png" />
+                                    <img src="./img/teaser.png" />
+                                </div>
+                            </div>
+                        </div>                                                        
+                    
+                        <div class="card d-block border-0">
+                            <div class="card-body">
+                                <p class="card-text fs--1">We present a new way to exploit pre-trained GANs for the task of large-scale super-resolution, up to 64× upscaling factor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Example Results
+                </h3>
+                <table>
+                    <tr>
+                    <td width="49%">
+                        <video id="v11" width="90%" autoplay loop muted controls>
+                            <source src="img/56Leonard_2x2_demo.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                    <td width="51%">
+                        <video id="v12" width="100%" autoplay loop muted controls>
+                            <source src="img/citynerf_beautifuldemo_540p.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                </tr>
+                </table>                
+            </div>
+        </div>
+        <br> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{xiangli2022bungeenerf,
+    title={BungeeNeRF: Progressive Neural Radiance Field for Extreme Multi-scale Scene Rendering},
+    author={Xiangli, Yuanbo and Xu, Linning and Pan, Xingang, and Zhao, Nanxuan and Rao, Anyi and Theobalt, Christian and Dai, Bo and Lin, Dahua},
+    booktitle = {The European Conference on Computer Vision (ECCV)}, 
+    year={2022}
+}
+</textarea>
+<!-- @article{xiangli2021citynerf,
+    title={CityNeRF: Building NeRF at City Scale},
+    author={Xiangli, Yuanbo and Xu, Linning and Pan, Xingang and Zhao, Nanxuan and Rao, Anyi and Theobalt, Christian and Dai, Bo and Lin, Dahua},
+    journal={arXiv preprint arXiv:2112.05504},
+    year={2021}
+} -->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+	<script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+	</script>
+
+
+
+    <!-- Image Slider Javascripts -->
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+        $(window).on('load',function() {
+            $("#images").twentytwenty();
+        });
+    </script>
+    <script>
+        $(function(){
+            $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.49, before_label: 'Low-Resolution', after_label: 'Super-Resolution'});
+        });
+    </script>
+</html>
