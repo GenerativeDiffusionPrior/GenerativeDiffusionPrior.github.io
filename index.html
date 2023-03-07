@@ -58,22 +58,21 @@
                     <a style="color:#000000;" href="https://eveneveno.github.io/lnxu/">Zhaoyang Lv<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a style="color:#000000;" href="https://xingangpan.github.io/">Liang Pan<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a style="color:#000000;" href="http://nxzhao.com/">Junzhe Zhang<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="https://anyirao.com/">Weidong Yang<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://anyirao.com/">Weidong Yang*<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a style="color:#000000;" href="https://people.mpi-inf.mpg.de/~theobalt/">Tianyue Luo<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a style="color:#000000;" href="http://daibo.info/">Bo Zhang<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="http://daibo.info/">Bo Dai<sup>2</sup></a>
+                    <a style="color:#000000;" href="http://daibo.info/">Bo Dai*<sup>2</sup></a>
                 </div>
 
                 <div style="margin-bottom: 0.5em;" class="affiliations">
-                    <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://www.mpi-inf.mpg.de/">Max Planck Institute for Informatics<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                    <a href="http://fudan.edu.cn/">Fudan University<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                     </br>
-                    <a href="https://www.bath.ac.uk/">University of Bath<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>4</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    <a href="https://www.mmlab-ntu.com/">Nanyang Technological University<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
                 </div>
 
                 <div style="margin-bottom: 0.7em;" class="col-md-12 text-center">
-                    *denotes equal contribution
+                    *denotes corresponding authors
                 </div>
 
             </div>
@@ -91,11 +90,11 @@
                         <li>
                             <a href="./img/1947.pdf">
                             <image src="./img/paper.png" height="50px"><br>
-                                <h5><strong>ECCV2022</strong></h5>
+                                <h5><strong>CVPR2023</strong></h5>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/city-super/BungeeNeRF">
+                            <a href="https://github.com/Fayeben/GenerativeDiffusionPrior">
                             <image src="./img/github_pad.png" height="50px"><br>
                                 <h5><strong>Code</strong></h5>
                             </a>
@@ -122,30 +121,14 @@
             </div>
         </div>
 
-        <div class="row">                              
-            <div class="col-md-6 col-md-offset-3">
-                <h3>
-                    Low-light Enhancement
-                </h3>
-                <div class="twentytwenty-container" id="images">
-                    <img src="./img/low_light01.jpg" />
-                    <img src="./img/high_light02.png" />
-                </div>
-            </div>                                                     
-        </div>
-<!-- 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Framework
                 </h3>
-                <image src="img/training_mechanism_residual_v9.png" class="img-responsive" alt="overview"><br>
+                <image src="img/overview.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
-                    <strong> Overview of CityNeRF.</strong> (a) An illustration of the multi-scale data in city-scale scenes, where we use L ∈ { 1 , 2 , 3 , . . . , } to
-                        denote each scale. At each stage, our model grows in synchronization with the training set. (b) New residual blocks are appended to the
-                        network as the training proceeds, supervised by the union of samples from the most remote scale up to the current scale. The structure of a
-                        residual block is shown in the dashed box. (c) Level-of-detail rendering results obtained at different residual blocks. From shallow to deep,
-                        details are added bit by bit. (
+                    <strong> Overview of GDP.</strong> Illustration of our GDP for unified image recovery. (
                         <a style="color:#000000;" href="https://www.google.com/help/terms_maps/">
                         ©2021 Google
                         </a>
@@ -154,6 +137,36 @@
             </div>
         </div>
 
+        <div class="row">                              
+            <div class="col-md-2 col-md-offset-3">
+                <h3>
+                    4x Super-Resolution
+                </h3>
+                <div class="twentytwenty-container" id="images">
+                    <img src="./img/SR/low_res01.png" />
+                    <img src="./img/SR/high_res01.png" />
+                </div>
+            </div>                                                     
+        </div>
+
+        <div class="row">                              
+            <div class="col-md-6 col-md-offset-3">
+                <h3>
+                    Low-light Enhancement
+                </h3>
+                <div class="twentytwenty-container" id="images">
+                    <img src="./img/low_light01.jpg" />
+                    <img src="./img/high_light01.png" />
+                </div>
+                <div class="twentytwenty-container" id="images">
+                    <img src="./img/low_light02.jpg" />
+                    <img src="./img/high_light02.png" />
+                </div>
+            </div>                                                     
+        </div>
+
+
+<!--
         <section>
             <div class="container">
                 <div class="row no-gutters justify-content-between">
@@ -220,6 +233,8 @@
     booktitle = {The European Conference on Computer Vision (ECCV)}, 
     year={2022}
 }
+    </div>
+</body> 
 </textarea>
 <!-- @article{xiangli2021citynerf,
     title={CityNeRF: Building NeRF at City Scale},
@@ -227,9 +242,9 @@
     journal={arXiv preprint arXiv:2112.05504},
     year={2021}
 } -->
-                </div>
+                <!-- </div>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -241,8 +256,6 @@
                 </p>
             </div>
         </div> -->
-    </div>
-</body>
 
 	<script type="text/javascript">
         var slideIndex = 1;
