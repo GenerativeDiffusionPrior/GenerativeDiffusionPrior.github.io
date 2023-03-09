@@ -184,6 +184,8 @@
                     <img src="./img/low_light01.jpg" />
                     <img src="./img/high_light01.png" />
                 </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
                 <div class="twentytwenty-container" id="images">
                     <img src="./img/low_light02.jpg" />
                     <img src="./img/high_light02.png" />
@@ -198,19 +200,20 @@
                     Brightness Control
                 </h3>
                 <p class="text-justify">
-                    GDP can be utilized for low-light enhancement for synthesized images or real-world images.
-                    Due to the degradation model is optimized during the sampling process, users do not need to give the specifc degradation model.
-                    Our GDP can also be extended to high-light image enhancement.
+                    By the merit of exposure control loss, GDP can enhance the low-light images according the needs of users. Users can control the lightness of recoveried images by giving scale of exposure control loss.
                 </p>
                 <image src="img/brightness.png" class="img-responsive" alt="overview"><br>
             </div>
         </div>
 
         <div class="row">  
-            <div class="col-md-3 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Colorization
                 </h3> 
+                <p class="text-justify">
+                    With the help of colorization loss, GDP can generate images with natural color.
+                </p>
             </div>
         </div>
         <div class="row"> 
@@ -360,10 +363,13 @@
 
 
         <div class="row">  
-            <div class="col-md-3 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Deblur
                 </h3> 
+                <p class="text-justify">
+                    In our experiments, we exploit GDP to tackle the gaussian blur. Motion blur can also be stuied in our method.
+                </p>
             </div>
         </div>
         <div class="row"> 
