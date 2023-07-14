@@ -327,10 +327,7 @@ label
 
     margin-bottom: .5rem;
 }
-video {
-    display: block;
-    margin: auto;
-}
+
 button
 {
     border-radius: 0;
